@@ -1,0 +1,54 @@
+[project]
+name = "qt6-material"
+version = "0.0.1"
+description = "Material inspired stylesheet for PySide6 and PyQt6."
+readme = "README.md"
+authors = [
+    { name = "Michael Cummings", email = "mgcummings@yahoo.com" }
+]
+maintainers = [
+    { name = " Michael Cummingsa", email = "mgcummings@yahoo.com" }
+]
+license = "BSD-2-Clause"
+license-files = ["LICENSE"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: BSD License",
+    "Natural Language :: English",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.12"
+]
+requires-python = ">=3.12.10"
+dependencies = []
+
+[project.optional-dependencies]
+pyqt = [
+    "pyqt6>=6.9.0",
+]
+pyside = [
+    "pyside6>=6.9.0",
+]
+
+[built-system]
+requires = ["uv"]
+build-backend = "uv"
+
+[dependency-groups]
+dev = [
+    "pytest>=8.3.5",
+    "ruff>=0.11.7",
+]
+
+[tool-pytest.ini_options]
+addopts = [
+    "--import-mode=importlib",
+]
+pythonpath = "src"
+
+[tool.ruff]
+line-length = 80
+
+[tool.ruff.lint]
+extend-select = ["E", "I", "N", "R", "W"]
+
